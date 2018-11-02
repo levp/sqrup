@@ -2,15 +2,28 @@
 
 # sqrup
 
-Surround text with a rectangle to make it stand out.
+Surround text with a rectangle and draw attention to it.
+
+```js
+const sqrup = require('sqrup');
+
+const result = sqrup('Hello,\nworld!');
+
+console.log(result);
+```
+
+Output:
+```
+************
+*  Hello,  *
+*  world!  *
+************
+```
 
 ## Install
 
 `npm i sqrup`
 
-## Import
-
-`const sqrup = require('sqrup');`
 
 ## API
 
@@ -49,19 +62,7 @@ Or you can just take a look at the `sqrup.d.ts` file.
 
 ## Examples
 
-### 1. Simple use case
-```js
-sqrup('Hello,\nworld!');
-```
-
-```
-************
-*  Hello,  *
-*  world!  *
-************
-```
-
-### 2. Use custom character
+### 1. Use custom character
 (Instead of the default asterisk `*`)
 
 ```js
@@ -75,7 +76,7 @@ x  Three.  x
 xxxxxxxxxxxx
 ```
 
-### 3. Control the padding between the text and the square
+### 2. Control the padding between the text and the square
 ```js
 sqrup('WELCOME\n HOME', {
                    // defaults:
@@ -97,7 +98,7 @@ o                       o
 ooooooooooooooooooooooooo
 ```
 
-### 4. Fine grained customization
+### 3. Fine grained customization
 
 ```js
 sqrup('Look Ma,\n I\'m in a box!', {
