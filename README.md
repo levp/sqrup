@@ -80,7 +80,7 @@ xxxxxxxxxxxx
 console.log(sqrup('WELCOME\n HOME', {
                    // defaults:
     default: 'o',  // '*'
-    padLeft: 8,    // 1
+    padLeft: 8,    // 2
     padRight: 8,   // 2
     padTop: 2,     // 0
     padBottom: 2,  // 0
