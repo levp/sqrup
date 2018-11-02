@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "name": "sqrup",
+  "version": "0.1.0",
+  "author": "Levp",
+  "license": "ISC",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "devDependencies": {
+    "typescript": "^3.1.6"
+  }
+}
