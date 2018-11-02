@@ -12,6 +12,41 @@ Surround text with a rectangle to make it stand out.
 
 `const sqrup = require('sqrup');`
 
+## API
+
+Function signature:
+```js
+function sqrup(text, options)
+````
+
+With TypeScript types:
+```typescript
+function sqrup(text: string | string[], options: string | sqrup.SquareUpOptions): string
+```
+
+```typescript
+type SquareUpOptions = {
+  default?: string;
+  // Sides
+  left?: string;
+  right?: string;
+  top?: string;
+  bottom?: string;
+  // Corners
+  topLeft?: string;
+  topRight?: string;
+  bottomLeft?: string;
+  bottomRight?: string;
+  // Pad
+  padLeft?: number;
+  padRight?: number;
+  padBottom?: number;
+  padTop?: number;
+}
+```
+
+Or you can just take a look at the `sqrup.d.ts` file.
+
 ## Examples
 
 ### 1. Simple use case
