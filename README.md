@@ -51,7 +51,7 @@ Or you can just take a look at the `sqrup.d.ts` file.
 
 ### 1. Simple use case
 ```js
-console.log( sqrup('Hello,\nworld!') );
+sqrup('Hello,\nworld!');
 ```
 
 ```
@@ -65,7 +65,7 @@ console.log( sqrup('Hello,\nworld!') );
 (Instead of the default asterisk `*`)
 
 ```js
-console.log(sqrup('One,\nTwo,\nThree.', 'x'));
+sqrup('One,\nTwo,\nThree.', 'x');
 ```
 ```
 xxxxxxxxxxxx
@@ -77,14 +77,14 @@ xxxxxxxxxxxx
 
 ### 3. Control the padding between the text and the square
 ```js
-console.log(sqrup('WELCOME\n HOME', {
+sqrup('WELCOME\n HOME', {
                    // defaults:
     default: 'o',  // '*'
     padLeft: 8,    // 2
     padRight: 8,   // 2
     padTop: 2,     // 0
     padBottom: 2,  // 0
-}));
+});
 ```
 ```
 ooooooooooooooooooooooooo
@@ -100,7 +100,7 @@ ooooooooooooooooooooooooo
 ### 4. Fine grained customization
 
 ```js
-console.log(sqrup('Look Ma,\n I\'m in a box!', {
+sqrup('Look Ma,\n I\'m in a box!', {
   // default:  ...,
   // The `default` option does nothing in this specific scenario
   // since all of the edge charactrers are specified individually
@@ -125,7 +125,7 @@ console.log(sqrup('Look Ma,\n I\'m in a box!', {
   topRight: '◣',
   bottomLeft: '◥',
   bottomRight: '◤',
-}));
+});
 ```
 
 ```
