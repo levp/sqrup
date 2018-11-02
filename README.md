@@ -124,3 +124,21 @@ type SquareUpOptions = {
   padTop?: number;       // 0
 }
 ```
+
+## Extra - How to produce the image at the top
+
+```js
+sqrup('\u001b[32msqrup\u001b[39m', {
+  default: '\u001b[33m*\u001b[39m',
+  // Sides
+  left: '\u001b[33m⁑\u001b[39m',
+  right: '\u001b[33m⁑\u001b[39m',
+  // Pad
+  padLeft: 6,
+  padRight: 6,
+  padBottom: 2,
+  padTop: 2,
+})
+```
+
+![](https://i.imgur.com/MvMTdgF.png)
