@@ -149,7 +149,7 @@ type SquareUpOptions = {
   padBottom?: number;    // 0
   padTop?: number;       // 0
 
-  // The following 8 properties will all use the value of the `default`
+  // The following 8 options will all use the value of the `default`
   // option if they are not explicitly specified.
 
   // Sides
