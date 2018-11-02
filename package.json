@@ -36,5 +36,14 @@
   },
   "dependencies": {
     "string-width": "^2.1.1"
-  }
+  },
+  "description": "![](https://i.imgur.com/MvMTdgF.png)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/levp/sqrup.git"
+  },
+  "bugs": {
+    "url": "https://github.com/levp/sqrup/issues"
+  },
+  "homepage": "https://github.com/levp/sqrup#readme"
 }
