@@ -1,6 +1,6 @@
 import stringWidth = require('string-width');
 
-export = function sqrup(text: string | string[], options: string | sqrup.SquareUpOptions): string[] {
+export = function sqrup(text: string | string[], options: string | sqrup.SquareUpOptions): string {
 	const lines: string[] = extractLines(text);
 	const style = makeStyle(options);
 
@@ -26,7 +26,7 @@ export = function sqrup(text: string | string[], options: string | sqrup.SquareU
 	for (let i = 0; i < lines.length; i++) {
 		result[i + 1 + style.padTop] = style.leftChar + padLeftStr + (lines[i].padEnd(longest, ' ')) + padRightStr + style.rightChar;
 	}
-	return result;
+	return result.join('\n');
 }
 
 function makeStyle(options: string | sqrup.SquareUpOptions): sqrup.SquareUpStyle {
