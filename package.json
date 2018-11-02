@@ -2,13 +2,35 @@
   "private": true,
   "name": "sqrup",
   "version": "0.1.0",
-  "author": "Levp",
+  "author": "levp <levi2p@gmail.com>",
   "license": "ISC",
+  "files": [
+    "index.js",
+    "index.js.map",
+    "index.d.ts"
+  ],
+  "keywords": [
+    "terminal",
+    "console",
+    "string",
+    "str",
+    "cli",
+    "style",
+    "styles",
+    "tty",
+    "formatting",
+    "shell",
+    "log",
+    "logging",
+    "command-line",
+    "text"
+  ],
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w"
   },
   "devDependencies": {
+    "@types/node": "^10.12.2",
     "@types/string-width": "^2.0.0",
     "typescript": "^3.1.6"
   },
