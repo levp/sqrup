@@ -102,8 +102,8 @@ ooooooooooooooooooooooooo
 ```js
 console.log(sqrup('Look Ma,\n I\'m in a box!', {
   // default:  ...,
-  // The `default` option is does nothing in this scenario since
-  // all of the edge charactrers are specified individually
+  // The `default` option does nothing in this specific scenario
+  // since all of the edge charactrers are specified individually
   // in the options at the bottom.
 
   // Pad
