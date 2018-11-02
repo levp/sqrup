@@ -58,7 +58,7 @@ type SquareUpOptions = {
 }
 ```
 
-Or you can just take a look at the `sqrup.d.ts` file.
+Or you can just take a look at the included `index.d.ts` file.
 
 ## Examples
 
