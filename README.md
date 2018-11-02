@@ -142,21 +142,26 @@ console.log(sqrup('Look Ma,\n I\'m in a box!', {
 ```typescript
 type SquareUpOptions = {
   default?: string;      // '*'
-  // Sides
-  left?: string;         // <- default
-  right?: string;        // <- default
-  top?: string;          // <- default
-  bottom?: string;       // <- default
-  // Corners
-  topLeft?: string;      // <- default
-  topRight?: string;     // <- default
-  bottomLeft?: string;   // <- default
-  bottomRight?: string;  // <- default
+
   // Pad
   padLeft?: number;      // 2
   padRight?: number;     // 2
   padBottom?: number;    // 0
   padTop?: number;       // 0
+
+  // The following 8 properties will all use the value of the `default`
+  // option if they are not explicitly specified.
+
+  // Sides
+  left?: string;         // use `default`
+  right?: string;        // use `default`
+  top?: string;          // use `default`
+  bottom?: string;       // use `default`
+  // Corners
+  topLeft?: string;      // use `default`
+  topRight?: string;     // use `default`
+  bottomLeft?: string;   // use `default`
+  bottomRight?: string;  // use `default`
 }
 ```
 
