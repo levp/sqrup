@@ -1,3 +1,5 @@
+import stringWidth = require('string-width');
+
 export = function sqrup(text: string | string[], options: string | sqrup.SquareUpOptions): string[] {
 	const lines: string[] = extractLines(text);
 	const style = makeStyle(options);
@@ -24,7 +26,6 @@ export = function sqrup(text: string | string[], options: string | sqrup.SquareU
 	for (let i = 0; i < lines.length; i++) {
 		result[i + 1 + style.padTop] = style.leftChar + padLeftStr + (lines[i].padEnd(longest, ' ')) + padRightStr + style.rightChar;
 	}
-
 	return result;
 }
 
@@ -63,9 +64,7 @@ function extractChar(char: any, defaultCh: string): string {
 	if (char == null) {
 		return defaultCh;
 	}
-	char = String(char);
-	char = (char.length > 0) ? char.charAt(0) : defaultCh;
-	return char;
+	return String(char);
 }
 
 function extractLines(text: string | string[]): string[] {
@@ -82,8 +81,9 @@ function extractLines(text: string | string[]): string[] {
 function longestLineLength(lines: string[]): number {
 	let longest = 0;
 	for (const ln of lines) {
-		if (ln.length > longest) {
-			longest = ln.length;
+		const length = stringWidth(ln);
+		if (length > longest) {
+			longest = length;
 		}
 	}
 	return longest;
