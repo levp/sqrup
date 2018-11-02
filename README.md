@@ -177,3 +177,7 @@ sqrup('\u001b[32msqrup\u001b[39m', {
 ```
 
 ![](https://i.imgur.com/MvMTdgF.png)
+
+## License
+
+[ISC](https://opensource.org/licenses/ISC)
