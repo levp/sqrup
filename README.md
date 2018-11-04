@@ -179,7 +179,7 @@ sqrup('\u001b[32msqrup\u001b[39m', {
   padRight: 6,
   padBottom: 2,
   padTop: 2,
-})
+});
 ```
 
 ![](https://i.imgur.com/MvMTdgF.png)
