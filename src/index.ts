@@ -4,14 +4,19 @@ export = function sqrup(text: string | string[], options: string | sqrup.SquareU
 	const lines: string[] = extractLines(text);
 	const style = makeStyle(options);
 
-	const longest: number = longestLineLength(lines);
-	const hatchLength = longest + style.padLeft + style.padRight + 2;
-	const hatchTop: string = style.topLeftChar + repeatStr(style.topChar, hatchLength - 2) + style.topRightChar;
-	const hatchBottom: string = style.bottomLeftChar + repeatStr(style.bottomChar, hatchLength - 2) + style.bottomRightChar;
+	// Find the longest line in the text
+	const longestTextLine: number = longestLineLength(lines);
 
+	// Make the strings that will constitute the top and bottom lines.
+	const hatchLength = longestTextLine + style.padLeft + style.padRight + 2;
+	const hatchTop: string = makeTopHatch(hatchLength, style);
+	let hatchBottom: string = makeBottomHatch(hatchLength, style);
+
+	// Make the lines that will be used for top and bottom padding.
+	// (If both top and bottom padding is 0, then there's no need to create this string.)
 	let verticalPadLine: string | null = null;
 	if (style.padTop > 0 || style.padBottom > 0) {
-		verticalPadLine = style.leftChar + repeatStr(' ', longest + style.padLeft + style.padRight) + style.rightChar;
+		verticalPadLine = makePadLine(longestTextLine, style);
 	}
 
 	const result: string[] = new Array(lines.length + style.padTop + style.padBottom + 2);
@@ -24,9 +29,21 @@ export = function sqrup(text: string | string[], options: string | sqrup.SquareU
 	const padRightStr = repeatStr(' ', style.padRight);
 
 	for (let i = 0; i < lines.length; i++) {
-		result[i + 1 + style.padTop] = style.leftChar + padLeftStr + (lines[i].padEnd(longest, ' ')) + padRightStr + style.rightChar;
+		result[i + 1 + style.padTop] = style.leftChar + padLeftStr + (lines[i].padEnd(longestTextLine, ' ')) + padRightStr + style.rightChar;
 	}
 	return result.join('\n');
+}
+
+function makePadLine(longestTextLine: number, style: sqrup.SquareUpStyle): string {
+	return style.leftChar + repeatStr(' ', longestTextLine + style.padLeft + style.padRight) + style.rightChar;
+}
+
+function makeTopHatch(length: number, style: sqrup.SquareUpStyle): string {
+	return style.topLeftChar + repeatStr(style.topChar, length - 2) + style.topRightChar;
+}
+
+function makeBottomHatch(length: number, style: sqrup.SquareUpStyle): string {
+	return style.bottomLeftChar + repeatStr(style.bottomChar, length - 2) + style.bottomRightChar;
 }
 
 function makeStyle(options: string | sqrup.SquareUpOptions): sqrup.SquareUpStyle {
