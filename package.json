@@ -4,6 +4,7 @@
   "version": "0.1.4",
   "author": "levp <levi2p@gmail.com>",
   "license": "ISC",
+  "description": "Wraps text in a rectangle to make it stand out.",
   "files": [
     "index.js",
     "index.js.map",
@@ -37,7 +38,6 @@
   "dependencies": {
     "string-width": "^2.1.1"
   },
-  "description": "![](https://i.imgur.com/MvMTdgF.png)",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/levp/sqrup.git"
